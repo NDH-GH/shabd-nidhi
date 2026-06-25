@@ -111,6 +111,36 @@ The `scripts/` directory contains Python programs used to generate and process t
 
 ---
 
+## Setup
+
+### Requirements
+
+Install the required Python packages:
+
+```bash
+pip install openai pandas
+```
+
+### API Configuration
+
+Set your API key as an environment variable before running the scripts.
+
+**Windows (PowerShell)**
+
+```powershell
+$env:OPENAI_API_KEY="your_api_key"
+```
+
+**Linux/macOS**
+
+```bash
+export OPENAI_API_KEY="your_api_key"
+```
+
+If you are using a custom OpenAI-compatible API endpoint, configure the appropriate base URL in your environment or modify the scripts accordingly.
+
+---
+
 ## Methodology
 
 1. Extract text from NCERT Hindi textbooks (Classes 1–12).
