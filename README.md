@@ -162,8 +162,6 @@ Future versions of Shabd-Nidhi may include:
 ## Author
 
 **Nidhi Waldia**
-Lead Educational Specialist – Literacy
-Educational Initiatives (EI), India
 
 ---
 
