@@ -6,69 +6,101 @@
 
 ## Overview
 
-Shabd-Nidhi was created by extracting vocabulary from the Hindi textbooks published by the National Council of Educational Research and Training (NCERT), normalizing OCR and PDF extraction errors, and enriching the resulting vocabulary with corpus statistics and AI-assisted lexical information.
+Shabd-Nidhi was created by extracting vocabulary from the Hindi textbooks published by the **National Council of Educational Research and Training (NCERT)**, normalizing OCR and PDF extraction errors, and enriching the resulting vocabulary with corpus statistics and AI-assisted lexical information.
 
 The dataset is intended to serve as a reusable resource for researchers, educators, curriculum designers, lexicographers, and Natural Language Processing (NLP) practitioners working with Hindi.
 
 ---
 
-## Dataset Statistics
+## Repository Structure
 
-- **14,926** unique normalized Hindi words
-- Word frequencies across NCERT Hindi textbooks (Classes 1–12)
-- Earliest NCERT grade in which each word first appears
-- AI-generated example sentence for each word
-- OCR/PDF normalization mapping
+```text
+shabd-nidhi/
+│
+├── data/
+│   ├── shabd_nidhi_master.csv
+│   ├── shabd_nidhi_grade_master.csv
+│   ├── shabd_nidhi_lexicon.csv
+│   └── shabd_nidhi_clean.csv
+│
+├── scripts/
+│   ├── normalize_all_words.py
+│   ├── create_master_vocab.py
+│   └── generate_lexicon.py
+│
+├── README.md
+└── LICENSE
+```
 
 ---
 
-## Repository Contents
+## Dataset Statistics
 
-### `shabd_nidhi_master.csv`
+* **14,926** unique normalized Hindi words
+* Word frequencies across NCERT Hindi textbooks (Classes 1–12)
+* Earliest NCERT grade in which each word first appears
+* AI-generated example sentence for each word
+* OCR/PDF normalization mapping
+
+---
+
+## Dataset Files
+
+### `data/shabd_nidhi_master.csv`
 
 Contains the unique normalized Hindi vocabulary.
 
-| Column | Description |
-|--------|-------------|
-| `normalized_word` | Normalized Hindi word |
-| `frequency` | Total frequency across the corpus |
+| Column            | Description                       |
+| ----------------- | --------------------------------- |
+| `normalized_word` | Normalized Hindi word             |
+| `frequency`       | Total frequency across the corpus |
 
 ---
 
-### `shabd_nidhi_grade_master.csv`
+### `data/shabd_nidhi_grade_master.csv`
 
 Adds the earliest NCERT grade in which each word first appears.
 
-| Column | Description |
-|--------|-------------|
-| `normalized_word` | Normalized Hindi word |
-| `frequency` | Total frequency across the corpus |
-| `earliest_grade` | First NCERT grade in which the word appears |
+| Column            | Description                                 |
+| ----------------- | ------------------------------------------- |
+| `normalized_word` | Normalized Hindi word                       |
+| `frequency`       | Total frequency across the corpus           |
+| `earliest_grade`  | First NCERT grade in which the word appears |
 
 ---
 
-### `shabd_nidhi_lexicon.csv`
+### `data/shabd_nidhi_lexicon.csv`
 
 Provides AI-generated lexical information for each word.
 
-| Column | Description |
-|--------|-------------|
-| `word` | Hindi word |
-| `frequency` | Word frequency |
-| `pos` | AI-generated part of speech |
+| Column             | Description                   |
+| ------------------ | ----------------------------- |
+| `word`             | Hindi word                    |
+| `frequency`        | Word frequency                |
+| `pos`              | AI-generated part of speech   |
 | `example_sentence` | AI-generated example sentence |
 
 ---
 
-### `shabd_nidhi_clean.csv`
+### `data/shabd_nidhi_clean.csv`
 
 Maps extracted OCR/PDF word forms to their normalized forms.
 
-| Column | Description |
-|--------|-------------|
-| `word` | Original extracted word |
-| `normalized_word` | Corrected/normalized word |
-| `frequency` | Frequency of the extracted word |
+| Column            | Description                     |
+| ----------------- | ------------------------------- |
+| `word`            | Original extracted word         |
+| `normalized_word` | Corrected/normalized word       |
+| `frequency`       | Frequency of the extracted word |
+
+---
+
+## Scripts
+
+The `scripts/` directory contains Python programs used to generate and process the dataset, including:
+
+* OCR normalization
+* Master vocabulary generation
+* Lexical metadata generation
 
 ---
 
@@ -87,31 +119,31 @@ Maps extracted OCR/PDF word forms to their normalized forms.
 
 Shabd-Nidhi can be used for:
 
-- Foundational Literacy and Numeracy (FLN)
-- Educational content development
-- Curriculum design
-- Hindi Natural Language Processing (NLP)
-- Vocabulary and corpus analysis
-- Readability analysis
-- Lexicography
-- Educational assessment
-- Question generation
-- Linguistic research
+* Foundational Literacy and Numeracy (FLN)
+* Educational content development
+* Curriculum design
+* Hindi Natural Language Processing (NLP)
+* Vocabulary and corpus analysis
+* Readability analysis
+* Lexicography
+* Educational assessment
+* Question generation
+* Linguistic research
 
 ---
 
 ## Limitations
 
-- OCR normalization and lexical metadata are AI-assisted and may contain occasional errors.
-- A small number of words may not have an assigned earliest grade because they could not be matched reliably during automated processing.
-- The dataset reflects the vocabulary present in NCERT Hindi textbooks and is not intended to represent the complete Hindi lexicon.
+* OCR normalization and lexical metadata are AI-assisted and may contain occasional errors.
+* A small number of words may not have an assigned earliest grade because they could not be matched reliably during automated processing.
+* The dataset reflects the vocabulary present in NCERT Hindi textbooks and is not intended to represent the complete Hindi lexicon.
 
 ---
 
 ## Author
 
-**Nidhi Waldia**  
-Lead Educational Specialist – Literacy  
+**Nidhi Waldia**
+Lead Educational Specialist – Literacy
 Educational Initiatives (EI), India
 
 ---
@@ -124,4 +156,4 @@ If you use **Shabd-Nidhi** in research, educational resources, software, or publ
 
 ## License
 
-This repository is licensed under the MIT License. See the `LICENSE` file for details.
+This repository is licensed under the **MIT License**. See the `LICENSE` file for details.
